@@ -71,7 +71,7 @@ class Record
     {
         $txt_record = trim($txt_record);
         $splitted = explode(' ', $txt_record);
-        $this->regex = $splitted[0];
+        $this->regex = str_replace('/', '\/', $splitted[0]);
         if (!isset($splitted[1]))
             return;
         $this->destination = $splitted[1];

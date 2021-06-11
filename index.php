@@ -70,6 +70,12 @@ if ($original_host !== HOME) {
             <br>
             <code>_redirect.www.example.com IN TXT ".* http://example.com{0} 302 10"</code>
         </p>
+        <hr>
+        <p>
+            Hinweise:
+            <br>
+            <code>/</code> müssen (und dürfen) im regulären Ausdruck nicht escaped werden.
+        </p>
     </div>
 
 </body>
