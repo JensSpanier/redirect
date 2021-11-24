@@ -1,5 +1,6 @@
 <?php
-define('HOME', '127.0.0.1');
+$env_redirect_home = getenv('REDIRECT_HOME');
+define('HOME', $env_redirect_home === false ? '127.0.0.1' : $env_redirect_home);
 require_once __DIR__ . '/redirect.php';
 
 $original_host = explode(':', $_SERVER['HTTP_HOST'])[0];
