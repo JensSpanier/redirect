@@ -24,11 +24,9 @@ class Redirect
     private function log(string $destination, int $http_code): void
     {
         if (getenv('LOG') !== 'true') return;
-        $target_dir = __DIR__ . '/logs';
-        if (!is_dir($target_dir)) mkdir($target_dir);
         $log_text = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
         $log_text .= "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}\t$destination\t$http_code";
-        $target_file = $target_dir . '/' . date('Y-m-d') . '.log';
+        $target_file = __DIR__ . '/logs/' . date('Y-m-d') . '.log';
         file_put_contents($target_file, date('c') . "\t$log_text\n", FILE_APPEND);
     }
 
