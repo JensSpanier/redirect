@@ -20,6 +20,7 @@ services:
         restart: unless-stopped
         environment:
             REDIRECT_HOME: redirect.spnr.de
+            LOG: 'true'
         ports:
             - 80:80
 ```
